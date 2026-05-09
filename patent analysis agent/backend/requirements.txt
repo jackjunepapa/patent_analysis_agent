@@ -1,0 +1,22 @@
+# Phase 1–2: LangChain + Chroma + OpenAI + hybrid retrieval + API
+python-dotenv>=1.0.0
+
+langchain>=0.3.0
+langchain-core>=0.3.0
+langchain-community>=0.3.0
+langchain-openai>=0.2.0
+langchain-chroma>=0.1.2
+langchain-text-splitters>=0.3.0
+langchain-classic>=0.1.0
+
+pydantic>=2.0
+chromadb>=0.5.0
+pypdf>=4.0.0
+
+python-docx>=1.0.0
+
+rank-bm25>=0.2.2
+
+fastapi>=0.115.0
+python-multipart>=0.0.9
+uvicorn[standard]>=0.32.0

@@ -1,0 +1,13 @@
+.env
+web/node_modules/
+web/.next/
+web/out/
+**/__pycache__/
+*.py[cod]
+.chroma_patent_analysis/
+*.egg-info/
+.venv/
+venv/
+
+# Streamlit secrets (Phase 4 beta)
+.streamlit/secrets.toml

@@ -1,0 +1,8 @@
+# 개발·테스트 (pytest)
+pytest>=8.0
+
+# (선택) Phase 1 특허 PDF 레이아웃 파싱 — 미설치 시 PyPDF 폴백
+# pip install "unstructured[pdf]"
+
+# Phase 2 PDF 정확도 테스트용 (US 스타일 텍스트 PDF 생성)
+fpdf2>=2.7.0
