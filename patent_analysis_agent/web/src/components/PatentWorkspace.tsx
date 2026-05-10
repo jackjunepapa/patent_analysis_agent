@@ -1,5 +1,7 @@
 ﻿"use client";
 
+// Phase 3 웹 UI — 소스: patent_analysis_agent/web/src/components (백엔드: patent_analysis_agent/backend)
+
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ComparisonTableMarkdown } from "@/components/ComparisonTableMarkdown";

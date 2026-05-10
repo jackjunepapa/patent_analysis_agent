@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+// Next.js 앱 루트: 저장소의 patent_analysis_agent/web
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
