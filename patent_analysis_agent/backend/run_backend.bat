@@ -1,5 +1,5 @@
 @echo off
-REM Patent Analysis Agent — backend FastAPI (더블클릭 또는 cmd에서 실행)
+REM Patent Analysis Agent — FastAPI 백엔드 (이 파일은 patent_analysis_agent\backend 에 두고 실행)
 cd /d "%~dp0"
 echo [%CD%]
 python -m pip install -r requirements.txt

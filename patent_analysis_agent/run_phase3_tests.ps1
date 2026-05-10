@@ -1,4 +1,4 @@
-# Patent Analysis Agent — Phase 3 개발 현황 테스트만 실행 (백엔드 pytest -m phase3)
+# Patent Analysis Agent — Phase 3 개발 현황만 검증 (이 스크립트는 `patent_analysis_agent` 저장소 루트에 두고 실행)
 $ErrorActionPreference = "Stop"
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 

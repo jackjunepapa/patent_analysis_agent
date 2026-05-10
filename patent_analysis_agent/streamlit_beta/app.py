@@ -1,7 +1,7 @@
 """Patent Analysis Agent — Phase 4 Streamlit 베타 UI.
 
 FastAPI 백엔드만 호출합니다. 백엔드가 꺼져 있으면 오류 메시지로 안내합니다.
-실행: `patent analysis agent` 폴더에서 run_streamlit.ps1 / run_streamlit.bat
+실행: `patent_analysis_agent` 폴더에서 run_streamlit.ps1 / run_streamlit.bat
 """
 
 from __future__ import annotations

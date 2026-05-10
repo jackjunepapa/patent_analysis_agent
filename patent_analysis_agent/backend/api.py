@@ -1,4 +1,8 @@
-"""Patent Analysis Agent — Phase 2 HTTP API."""
+"""Patent Analysis Agent — Phase 2 HTTP API.
+
+로컬 실행 시 작업 디렉터리는 ``patent_analysis_agent/backend`` 입니다
+(예: ``python -m uvicorn api:app --reload --host 127.0.0.1 --port 8000``).
+"""
 from __future__ import annotations
 
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile

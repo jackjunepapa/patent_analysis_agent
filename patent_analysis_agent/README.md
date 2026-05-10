@@ -167,12 +167,12 @@ KIPO/MPEP **참고 톤**의 신규성·진보성 논의와 결과 표시를 한 
 ##### 준비
 
 - PC에 **Python**과 **Node.js**가 설치되어 있어야 합니다. (이미 개발 중이셨다면 설치되어 있습니다.)
-- `patent analysis agent` 폴더 안에 **`.env`** 파일이 있고, 그 안에 **`OPENAI_API_KEY=`** 로 시작하는 키가 있어야 인덱스 빌드·분석이 됩니다.
+- `patent_analysis_agent` 폴더 안에 **`.env`** 파일이 있고, 그 안에 **`OPENAI_API_KEY=`** 로 시작하는 키가 있어야 인덱스 빌드·분석이 됩니다.
 
 ##### ① 백엔드 켜기 (한 번만, 검은 창 유지)
 
 1. 파일 탐색기에서  
-   `바탕화면\KK\Vibe_coding\patent analysis agent\backend` 폴더로 이동합니다.
+   `바탕화면\KK\Vibe_coding\patent_analysis_agent\backend` 폴더로 이동합니다.
 2. **`run_backend.bat`** 을 더블클릭합니다.  
    (또는 그 폴더에서 PowerShell을 연 뒤  
    `python -m uvicorn api:app --reload --host 127.0.0.1 --port 8000` 을 실행해도 됩니다.)
@@ -188,12 +188,12 @@ Swagger라는 **API 시험 화면**이 나오면 ①번 성공입니다.
    (본인 PC 경로가 다르면 `C:\Users\jackp\...` 부분만 실제 경로로 바꿉니다.)
 
 ```powershell
-cd "C:\Users\jackp\Desktop\KK\Vibe_coding\patent analysis agent\web"
+cd "C:\Users\jackp\Desktop\KK\Vibe_coding\patent_analysis_agent\web"
 npm install
 npm run dev
 ```
 
-**경로 주의:** 지금 터미널이 `...\patent analysis agent\backend` 안이면, 웹 폴더로 가려면 **`cd ..\web`** 만 입력합니다. (`cd patent analysis agent\web` 은 **오류**가 납니다.)
+**경로 주의:** 지금 터미널이 `...\patent_analysis_agent\backend` 안이면, 웹 폴더로 가려면 **`cd ..\web`** 만 입력합니다. (`cd patent_analysis_agent\web` 은 **오류**가 납니다.)
 
 3. 터미널에 **`http://localhost:3000`** 주소가 나오면, 브라우저에 그 주소를 입력합니다.
 
@@ -221,7 +221,7 @@ npm run dev
 
 ##### (선택) 자동 검사
 
-`patent analysis agent` 폴더에서 **`run_tests.bat`** 또는 **`run_tests.ps1`** 을 실행하면 개발자용 테스트가 한 번에 돌아갑니다.
+`patent_analysis_agent` 폴더에서 **`run_tests.bat`** 또는 **`run_tests.ps1`** 을 실행하면 개발자용 테스트가 한 번에 돌아갑니다.
 
 ### Phase 4: 베타 완성 · Streamlit 배포 · 소규모 사용자 테스트
 
@@ -315,7 +315,7 @@ uvicorn 실행 시 아래와 비슷한 **경고**가 나올 수 있습니다.
 ### 2) Python 백엔드
 
 ```bash
-cd "patent analysis agent"
+cd "patent_analysis_agent"
 python -m pip install -r backend/requirements.txt
 python backend/test_phase1_embedding.py
 ```
@@ -336,11 +336,11 @@ python backend/test_phase2_smoke.py
 
 **방법 A — 스크립트 (가장 단순)**
 
-- 파일 탐색기에서 `patent analysis agent/backend/run_backend.bat` 더블클릭  
+- 파일 탐색기에서 `patent_analysis_agent/backend/run_backend.bat` 더블클릭  
   또는 PowerShell에서:
 
 ```powershell
-cd "...\Vibe_coding\patent analysis agent\backend"
+cd "...\Vibe_coding\patent_analysis_agent\backend"
 .\run_backend.ps1
 ```
 
@@ -349,16 +349,16 @@ cd "...\Vibe_coding\patent analysis agent\backend"
 **방법 B — 저장소 루트에서 한 줄 (PowerShell 5.x 호환)**
 
 ```powershell
-cd "patent analysis agent/backend"; python -m pip install -r requirements.txt; python -m uvicorn api:app --reload --host 127.0.0.1 --port 8000
+cd "patent_analysis_agent/backend"; python -m pip install -r requirements.txt; python -m uvicorn api:app --reload --host 127.0.0.1 --port 8000
 ```
 
 **방법 C — 줄마다 따로 붙여 넣은 뒤 Enter**
 
-1. `cd "patent analysis agent/backend"` Enter  
+1. `cd "patent_analysis_agent/backend"` Enter  
 2. `python -m pip install -r requirements.txt` Enter  
 3. `python -m uvicorn api:app --reload --host 127.0.0.1 --port 8000` Enter  
 
-(항상 **`patent analysis agent`까지 포함한 경로**에서 `backend`로 들어가야 합니다. `Vibe_coding`만 연 상태에서 `cd backend` 하면 다른 폴더를 가리킵니다.)
+(항상 **`patent_analysis_agent`까지 포함한 경로**에서 `backend`로 들어가야 합니다. `Vibe_coding`만 연 상태에서 `cd backend` 하면 다른 폴더를 가리킵니다.)
 
 - 문서 UI(Swagger): **http://127.0.0.1:8000/docs** — 브라우저에서 바로 열어 엔드포인트를 시험합니다. (`/` 로 접속하면 `/docs`로 리다이렉트됩니다.)
 - Next.js 앱 실행 중일 때: **http://localhost:3000/api-test** 에서 안내·링크·Swagger 미리보기(iframe)를 제공합니다.
@@ -372,28 +372,28 @@ cd "patent analysis agent/backend"; python -m pip install -r requirements.txt; p
 `web/.env.local.example`을 참고해 `web/.env.local`에 API 주소를 넣을 수 있습니다(미설정 시 UI는 `http://127.0.0.1:8000` 사용).
 
 ```bash
-cd "patent analysis agent/web"
+cd "patent_analysis_agent/web"
 npm install
 npm run dev
 ```
 
 백엔드(uvicorn)와 **동시에** 띄운 뒤, 웹에서 파일 업로드 → **Build Search Index** → **분석 실행** 순으로 사용합니다.
 
-**경로 주의:** Next.js 앱은 저장소 최상위(`Vibe_coding`)의 `web`이 아니라 **`patent analysis agent/web`** 입니다. 상위 폴더에서 `cd web`만 하면 경로를 찾지 못합니다.
+**경로 주의:** Next.js 앱은 저장소 최상위(`Vibe_coding`)의 `web`이 아니라 **`patent_analysis_agent/web`** 입니다. 상위 폴더에서 `cd web`만 하면 경로를 찾지 못합니다.
 
 PowerShell 예시 — 저장소 루트(`...\Vibe_coding`)에서 바로 실행:
 
 ```powershell
-cd "patent analysis agent/web"; npm install; npm run dev
+cd "patent_analysis_agent/web"; npm install; npm run dev
 ```
 
-이미 **`patent analysis agent`** 폴더 안이라면:
+이미 **`patent_analysis_agent`** 폴더 안이라면:
 
 ```powershell
 cd web; npm run dev
 ```
 
-PowerShell 5.x에서는 `&&` 대신 `;`를 사용합니다. PowerShell 7+ 또는 CMD에서는 `cd "patent analysis agent/web" && npm run dev` 형태도 가능합니다.
+PowerShell 5.x에서는 `&&` 대신 `;`를 사용합니다. PowerShell 7+ 또는 CMD에서는 `cd "patent_analysis_agent/web" && npm run dev` 형태도 가능합니다.
 
 브라우저 UI는 Phase 3 기준으로 FastAPI와 연결되어 있습니다.
 
@@ -403,7 +403,7 @@ PowerShell 5.x에서는 `&&` 대신 `;`를 사용합니다. PowerShell 7+ 또는
 
 ### 한 번에 실행
 
-저장소 **`patent analysis agent`** 폴더에서:
+저장소 **`patent_analysis_agent`** 폴더에서:
 
 ```powershell
 .\run_tests.ps1
@@ -421,7 +421,7 @@ run_tests.bat
 
 비교표·Reasoning/Strategy 프롬프트·환각 검사·대용량 청구 스트레스·DOCX·(선택) OpenAI SSE를 한 번에 돌립니다.
 
-저장소 **`patent analysis agent`** 폴더에서:
+저장소 **`patent_analysis_agent`** 폴더에서:
 
 ```powershell
 .\run_phase3_tests.ps1
@@ -436,18 +436,18 @@ run_phase3_tests.bat
 직접 pytest만 쓸 때:
 
 ```powershell
-cd "patent analysis agent/backend"
+cd "patent_analysis_agent/backend"
 python -m pip install -r requirements.txt -r requirements-dev.txt
 python -m pytest tests -m phase3 -v --tb=short
 ```
 
 - **키 없이 수행:** `phase3` 중 `test_integration_openai`는 **스킵**되고 나머지(비교표, `phase3_verification`, 스트레스, 프롬프트 스모크, DOCX)는 통과해야 합니다.
-- **전체 Phase 3 라운드트립까지:** `patent analysis agent` 루트에 `.env`의 `OPENAI_API_KEY`를 두고 같은 명령을 실행하면 통합 테스트도 포함됩니다.
+- **전체 Phase 3 라운드트립까지:** `patent_analysis_agent` 루트에 `.env`의 `OPENAI_API_KEY`를 두고 같은 명령을 실행하면 통합 테스트도 포함됩니다.
 
 ### 백엔드 (pytest — 전체)
 
 ```powershell
-cd "patent analysis agent/backend"
+cd "patent_analysis_agent/backend"
 python -m pip install -r requirements.txt -r requirements-dev.txt
 python -m pytest tests -v --tb=short
 ```
@@ -464,15 +464,15 @@ python backend/test_phase2_smoke.py
 
 ### 프론트엔드
 
-**경로 주의:** 이미 **`...\patent analysis agent\backend`** 안에 있다면 `patent analysis agent\web`으로 `cd` 하면 안 됩니다(`backend` 아래에 그런 폴더가 없음). 한 단계 올라가야 합니다.
+**경로 주의:** 이미 **`...\patent_analysis_agent\backend`** 안에 있다면 `patent_analysis_agent\web`으로 `cd` 하면 안 됩니다(`backend` 아래에 그런 폴더가 없음). 한 단계 올라가야 합니다.
 
-- 저장소 루트 `...\patent analysis agent` 에서:
+- 저장소 루트 `...\patent_analysis_agent` 에서:
 
 ```powershell
 cd web; npm run test
 ```
 
-- 지금 위치가 `...\patent analysis agent\backend` 라면:
+- 지금 위치가 `...\patent_analysis_agent\backend` 라면:
 
 ```powershell
 cd ..\web; npm run test
@@ -481,7 +481,7 @@ cd ..\web; npm run test
 - 저장소 최상위 `...\Vibe_coding` 에서라면:
 
 ```powershell
-cd "patent analysis agent/web"; npm run test
+cd "patent_analysis_agent/web"; npm run test
 ```
 
 현재는 **`eslint`(Lint)** 를 테스트 스크립트로 실행합니다. 빌드 검증은 `npm run build`.
